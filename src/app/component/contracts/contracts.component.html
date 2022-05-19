@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-4">Contracts</h4>
+        <div class="table-responsive">
+          <table class="table align-middle text-nowrap text-center">
+              <thead>
+                  <tr>
+                      <th class="text-dark font-medium fs-4">ID</th>
+                      <th class="text-dark font-medium fs-4">User Name</th>
+                      <th class="text-dark font-medium fs-4">Freelancer</th>
+                      <th class="text-dark font-medium fs-4">Job Title</th>
+                      <th class="text-dark font-medium fs-4">Time</th>
+                      <td>
+                        <h5 class="mb-0 fw-normal">Contract Price</h5>
+                      </td>
+                      <th class="text-dark font-medium fs-4">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let user of contractList; let i=index;" >
+                  <tr>
+                      <td class="fs-4">{{i+1}}</td>
+                      <td class="fs-4">{{user.user.name}}</td>
+                      <td>
+                          <span class="p-2 bg- rounded-circle d-inline-block ms-3">{{user.freelancer.name}}</span>
+                      </td>
+
+                      <td>
+                          <h5 class="mb-0 fw-normal">{{user.job.title}}</h5>
+                      </td>
+                      <td>
+                        <h5 class="mb-0 fw-normal"><i class="fad fa-time"></i> {{user.created_at| date: 'short'}}</h5>
+                      </td>
+                      <td>
+                        <h5 class="mb-0 fw-normal">{{user.price}}$</h5>
+                      </td>
+                      <td>
+                        <button class="btn btn-info"><i class="far fa-eye"></i></button>&nbsp;
+                      </td>
+                  </tr>
+                </ng-container>
+              </tbody>
+          </table>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

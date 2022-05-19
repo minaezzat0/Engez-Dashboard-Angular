@@ -1,0 +1,22 @@
+body {
+  background: #BA68C8
+}
+.card-title
+{
+  font-weight: 600
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #4773d3
+}
+
+.profile-button {
+  box-shadow: none;
+  border: none
+}
+
+
+.back:hover {
+  color: #3246df;
+  cursor: pointer
+}

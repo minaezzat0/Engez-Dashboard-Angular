@@ -1,0 +1,157 @@
+<div class="container">
+  <div class="main-body">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="assets/images/free.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+              <div class="mt-3">
+                <h4><i class="fas fa-badge-check" style="color:dodgerblue"></i> {{newUser.name}}</h4>
+                <p class="text-secondary mb-1"><i class="fas fa-briefcase"></i> {{newUser.category.name}}</p>
+                <p class="text-muted font-size-sm mb-1"><i class="fas fa-map-marker-alt"></i> {{newUser.adress}} , Egypt</p>
+                <!-- <p class="text-muted font-size-sm mb-2"><i class="fas fa-check"></i> 0 Jobs Done</p> -->
+                <p class="text-muted font-size-sm mb-2"><i class="fas fa-envelope"></i> {{newUser.email}}</p>
+                <button class="btn btn-primary mb-1"><i class="far fa-envelope"></i> Message</button>
+              </div>
+            </div>
+            <hr class="my-4">
+            <h5 class="text-center  mb-4">Contacts</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0"><i style="font-size:22px; color:dodgerblue" class="fab fa-facebook-f" ></i> &nbsp;&nbsp;&nbsp;FaceBook</h6>
+                <span class="text-secondary">MoSaber22</span>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0"><i style="font-size:22px; color:green" class="fab fa-whatsapp"></i> &nbsp; Whatsapp</h6>
+                <span class="text-secondary">{{newUser.mobilenumber}}</span>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0"><i class="fa fa-mobile-alt" style="font-size:22px; color:dodgerblue"></i>&nbsp;&nbsp;&nbsp; Mobile </h6>
+                <span class="text-secondary">{{newUser.mobilenumber}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card">
+          <h3 class="card-title mt-4 mx-3 mb-5 text-center">Edit Freelancer Profile</h3>
+          <div class="card-body">
+            <form name="FormEdit"  (ngSubmit)="editFreelancer()" method="post">
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Full Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <input type="text" class="form-control" [(ngModel)]="newUser.name" name="name" >
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <input type="text" class="form-control"  [(ngModel)]="newUser.email" name="email" >
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Mobile</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <input type="text" class="form-control" [(ngModel)]="newUser.mobilenumber" name="mobile">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Address</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <input type="text" class="form-control" [(ngModel)]="newUser.adress" name="address" >
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Password</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <input type="password" class="form-control" [(ngModel)]="newUser.password" name="password" >
+              </div>
+            </div>
+
+            <div class="row my-4">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-9 text-secondary">
+                <button class="btn btn-primary px-4"  type="submit" ><i class="fa fa-check"></i> Save Changes</button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="d-flex align-items-center mb-3">Projects</h5>
+                  <div class="table-responsive">
+                    <table class="table align-middle text-nowrap text-center">
+                        <thead>
+                            <tr>
+
+                                <th class="text-dark font-medium fs-4">Job Title</th>
+                                <th class="text-dark font-medium fs-4">By User</th>
+                                <th class="text-dark font-medium fs-4">Money</th>
+                                <th class="text-dark font-medium fs-4">Address</th>
+                                <th class="text-dark font-medium fs-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td class="fs-4">Carpentry</td>
+                                <td>
+                                  <h5 class="mb-0 fw-normal">Mina Isaac</h5>
+                                </td>
+                                <td>
+                                  <h5 class="mb-0 fw-normal">2000$</h5>
+                                </td>
+                                <td>
+                                  <h5 class="mb-0 fw-normal">Minya</h5>
+                                </td>
+                                <td>
+                                  <button class="btn btn-warning"><i class="far fa-eye"></i></button>&nbsp;
+
+                                </td>
+                            </tr>
+                            <tr>
+
+                              <td class="fs-4">Electricty</td>
+                              <td>
+                                <h5 class="mb-0 fw-normal">Mina Isaac</h5>
+                              </td>
+                              <td>
+                                <h5 class="mb-0 fw-normal">2000$</h5>
+                              </td>
+                              <td>
+                                <h5 class="mb-0 fw-normal">Assuit</h5>
+                              </td>
+                              <td>
+                                <button class="btn btn-warning"><i class="far fa-eye"></i></button>&nbsp;
+
+                              </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

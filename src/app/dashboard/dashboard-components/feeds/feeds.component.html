@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Latest Jobs</h4>
+        <h5 class="card-subtitle text-muted">Done</h5>
+        <div class="feed-widget mt-4">
+            <ul class="list-unstyled feed-body m-0">
+              <ng-container>
+                <li class="feed-item d-flex align-items-center mb-3" *ngFor='let job of LatestJobs'>
+                    <div class="feed-icon round round-sm text-white d-flex align-items-center justify-content-center rounded-circle">
+                        <i class='bi bi-bag-check'></i>
+                    </div>
+                    <h5 class="mb-0 fw-normal ms-3">{{job.title}}</h5>
+                    <span class="text-muted ms-auto fs-2"> {{job.adress}}</span>
+                </li>
+              </ng-container>
+            </ul>
+        </div>
+    </div>
+</div>

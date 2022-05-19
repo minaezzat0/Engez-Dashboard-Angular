@@ -1,0 +1,40 @@
+<!-- ============================================================== -->
+<!-- toggle and nav items -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- Right side toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-end">
+  <!-- ============================================================== -->
+  <!-- User profile and search -->
+  <!-- ============================================================== -->
+  <li class="nav-item" ngbDropdown placement="bottom-end">
+    <a
+      ngbDropdownToggle
+      class="nav-link waves-effect waves-dark pro-pic"
+      href="javascript:void(0)"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <img
+        src="assets/images/users/user4.jpg"
+        alt="user"
+        class="rounded-circle"
+        width="31"
+      />
+      <span class="ms-2">Mina Isaac</span>
+    </a>
+    <div class="dropdown-menu-right" ngbDropdownMenu>
+      <a class="dropdown-item" routerLink="component/edit-profile"><i class="far fa-user"></i> Settings</a>
+      <!-- <a class="dropdown-item" href="javascript:void(0)"><i class="far fa-briefcase"></i>  My Jobs</a> -->
+      <!-- <div class="dropdown-divider"></div> -->
+      <!-- <div class="dropdown-divider"></div> -->
+      <a class="dropdown-item" href="javascript:void(0)"> <i class="far fa-sign-out"></i> Logout</a>
+    </div>
+  </li>
+  <!-- ============================================================== -->
+  <!-- User profile and search -->
+  <!-- ============================================================== -->
+</ul>

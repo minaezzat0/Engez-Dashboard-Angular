@@ -1,0 +1,92 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">All Freelancers</h4>
+        <a href="component/new-freelancer" class="btn btn-primary mb-4 mt-3"><i class="far fa-user-plus"></i> Add Freelancer</a>&nbsp;
+        <div class="table-responsive">
+          <table class="table align-middle text-nowrap">
+              <thead>
+                  <tr class="text-center">
+                      <th class="text-dark font-medium fs-4" style="text-align: left;">Photo</th>
+                      <th class="text-dark font-medium fs-4">Name</th>
+                      <th class="text-dark font-medium fs-4">Phone</th>
+                      <th class="text-dark font-medium fs-4">Email</th>
+                      <th class="text-dark font-medium fs-4">Status</th>
+                      <th class="text-dark font-medium fs-4">Address</th>
+                      <th class="text-dark font-medium fs-4">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let frlncr of freelancersList; let i=index;" >
+                  <tr class="text-center">
+                      <td>
+                          <div class="d-flex align-items-center">
+                              <!-- <img src="http://localhost/testing/testing/public/asset/images/users/{{frlncr.img}}" alt="user" width="45" class="rounded-circle"> -->
+                              <img src="../../../assets/images/free.png" alt="user" width="45" class="rounded-circle">
+                              <div class="ms-3">
+                                  <h5 class="mb-0 font-medium"></h5>
+                                  <span class="text-muted"></span>
+                              </div>
+                          </div>
+                      </td>
+                      <td class="fs-4">{{frlncr.name}}</td>
+                      <td>
+                          <span class="p-2 bg- rounded-circle d-inline-block ms-3">{{frlncr.mobilenumber}}</span>
+                      </td>
+
+                      <td>
+                          <h5 class="mb-0 fw-normal">{{frlncr.email}}</h5>
+                      </td>
+                      <td >
+                        <ng-container *ngIf="frlncr.verified=='verified'"> <h5 class="mb-0 fw-normal" title="verified"><i style="color:dodgerblue" class="fas fa-badge-check"></i></h5></ng-container>
+                        <ng-container *ngIf="frlncr.verified=='unverified'"> <h5 class="mb-0 fw-normal"  title="Un verified" style="color:red"><i class="fas fa-times-circle"></i></h5></ng-container>
+
+                      </td>
+                      <td>
+                        <h5 class="mb-0 fw-normal">{{frlncr.adress}}</h5>
+                      </td>
+                      <td>
+                        <a (click)="freelancerDetails(frlncr.id)"  class="btn btn-warning"><i class="far fa-eye"></i></a>&nbsp;
+                        <a (click)="editFreelancer(frlncr.id)" class="btn btn-info" ><i class="far fa-cog"></i> </a>&nbsp;
+                        <button class="btn btn-danger"><i class="far fa-trash"></i> </button>
+                      </td>
+                  </tr>
+                  </ng-container>
+                  <!-- <tr class="text-center">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/users/user4.jpg" alt="user" width="45" class="rounded-circle">
+                            <div class="ms-3">
+                                <h5 class="mb-0 font-medium"></h5>
+                                <span class="text-muted"></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="fs-4">Kero</td>
+                    <td>
+                        <span class="p-2 bg- rounded-circle d-inline-block ms-3">01007979368</span>
+                    </td>
+
+                    <td>
+                        <h5 class="mb-0 fw-normal">kero@kero.com</h5>
+                    </td>
+                    <td >
+                      <h5 class="mb-0 fw-normal" style="color:red"><i class="fas fa-times-circle"></i></h5>
+                    </td>
+                    <td>
+                      <h5 class="mb-0 fw-normal">Egypt</h5>
+                    </td>
+                    <td>
+                      <a href="/component/freelancer" class="btn btn-warning"><i class="far fa-eye"></i></a>&nbsp;
+                      <a href="/component/edit-freelancer"  class="btn btn-info"><i class="far fa-cog"></i></a> &nbsp;
+                      <button class="btn btn-danger"><i class="far fa-trash"></i> </button>
+                    </td>
+                </tr> -->
+              </tbody>
+          </table>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

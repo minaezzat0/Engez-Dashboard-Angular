@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-3">All Messages</h4>
+        <div class="table-responsive">
+          <table class="table align-middle text-nowrap text-center">
+              <thead>
+                  <tr>
+                      <th class="text-dark font-medium fs-4">ID</th>
+                      <!-- <th class="text-dark font-medium fs-4">Full Name</th> -->
+                      <th class="text-dark font-medium fs-4">Email</th>
+                      <th class="text-dark font-medium fs-4">Subject</th>
+                      <th class="text-dark font-medium fs-4">Messages</th>
+                      <th class="text-dark font-medium fs-4">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let msg of AllMessages; let i=index;" >
+                  <tr>
+                      <td class="fs-4">{{i+1}}</td>
+                      <!-- <td class="fs-4">{{msg.user.name}}</td> -->
+                      <td class="fs-4">{{msg.email}}</td>
+                      <td>
+                          <span class="p-2 bg- rounded-circle d-inline-block ms-3">{{msg.subject}}</span>
+                      </td>
+
+                      <td>
+                          <h5 class="mb-0 fw-normal">{{msg.message}}</h5>
+                      </td>
+                      <td>
+                        <button class="btn btn-info"><i class="far fa-eye"></i></button>&nbsp;
+                        <button class="btn btn-danger" (click)="deleteMsg(msg.id)"><i class="far fa-trash"></i></button>
+                      </td>
+                  </tr>
+                  </ng-container>
+              </tbody>
+          </table>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
